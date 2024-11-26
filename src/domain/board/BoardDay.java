@@ -32,7 +32,7 @@ public class BoardDay extends Board {
     }
 
     // Genera soles automáticamente del cielo
-    private void generateSkySun() {
+    public void generateSkySun() {
         int sunAmount = 25; // Cantidad de soles generados
         addSun(sunAmount);
         System.out.println("Soles del cielo generados: " + sunAmount + ". Soles actuales: " + getSunPoints());

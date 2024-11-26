@@ -1,6 +1,6 @@
 import controllers.BoardController;
 import domain.board.Board;
-
+import engine.GameEngine;
 import presentation.*;
 import domain.board.BoardDay;
 import domain.entities.*;
@@ -13,6 +13,9 @@ public class Main {
         BoardDay board = new BoardDay( 150);
         GameWindow gameWindow = new GameWindow(5, 9);
         BoardController controller = new BoardController(board, gameWindow);
+
+        GameEngine gameEngine = new GameEngine(board, gameWindow);
+        gameEngine.start();
 
         // Agregar plantas y zombis de prueba
         board.addPlant(new Sunflower(board), new Point(0, 0));
