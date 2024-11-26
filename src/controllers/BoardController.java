@@ -21,19 +21,15 @@ public class BoardController {
                     // Actualizar el tablero del dominio
                     board.updateZombies();
 
-                    // Sincronizar la GUI con el tablero
-                    SwingUtilities.invokeLater(() -> {
-                        gameWindow.updateBoard(board); // Actualiza el tablero gráfico
-                        gameWindow.updateSunCounter(); // Actualiza el contador de soles
-                    });
+                    // Actualizar la GUI
+                    SwingUtilities.invokeLater(() -> gameWindow.updateBoard(board));
 
-                    Thread.sleep(1000); // Intervalo para tiempo real
+                    Thread.sleep(1000); // Simulación en tiempo real
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }).start();
     }
-
 }
 
